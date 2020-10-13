@@ -1,0 +1,17 @@
+[
+    {
+        "name":"Chris Black",
+        "email":"chrisblack@gmail.com",
+        "password":"$2y$12$7Oz9dyuqnHhiBTqh0ILAKeQqGTmKFAeL82SgVgQaTrCG9gmqFo4Mq"
+    },
+    {
+        "name":"Daniel Grent",
+        "email":"danielgman@gmail.com",
+        "password":"$2y$12$7Oz9dyuqnHhiBTqh0ILAKeQqGTmKFAeL82SgVgQaTrCG9gmqFo4Mq"
+    },
+    {
+        "name":"Test User",
+        "email":"tester@comp3170.com",
+        "password":"$2y$12$T.73d6Tmj.hmU4wEmKofKeUsGNHLzpATV/a6fZNtNM3ZUy8aQL9Na"
+    }
+]
