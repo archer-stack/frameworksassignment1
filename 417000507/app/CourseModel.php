@@ -18,7 +18,7 @@
             return array();
         }
 
-        public function getCourseInstrutors():array{
+        public function getCourseInstructors():array{
             $data = file_get_contents($this->path . "/" . "data/course_instructor.json");
             return json_decode($data, true);
         }
@@ -30,7 +30,7 @@
 
         public function getPopular():array{
             $records = $this->getAll();
-            $courseInstructors = $this->getCourseInstrutors();
+            $courseInstructors = $this->getCourseInstructors();
             $instructors = $this->getInstructors();
 
             for ($i=0; $i < sizeof($records); $i++) { 
@@ -54,9 +54,9 @@
             $instructors = $this->getInstructors();
 
             for ($i=0; $i < sizeof($records); $i++) {
-                for ($j=0; $j < sizeof($courseInstructor); $j++) {
+                for ($j=0; $j < sizeof($courseInstructors); $j++) {
                     for ($k=0; $k < sizeof($instructors); $k++) {
-                        if ($records[$i]["course_id"] == $courseInstructor[$j]["course_id"] && $courseInstructor[$j]["instructor_id"] == $instructors[$k]["instructor_id"]) {
+                        if ($records[$i]["course_id"] == $courseInstructors[$j]["course_id"] && $courseInstructors[$j]["instructor_id"] == $instructors[$k]["instructor_id"]) {
                             $records[$i]["instructor_name"] = $instructors[$k]["instructor_name"];
                         }
                     }

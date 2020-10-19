@@ -10,7 +10,7 @@
             $this->getModel()->notify();
             $this->getModel()->setData($this->getModel()->getRecommend());
             $this->getModel()->notify();
-            $this->getModel()->display();
+            $this->getView()->display();
         }
     }
 ?>
