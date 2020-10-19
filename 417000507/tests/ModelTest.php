@@ -6,41 +6,41 @@
     class ModelTest extends TestCase{
 
         public function testModel(){
-            $indexModel = new IndexModel();
-            $this->assertInstanceOf('Model', $indexModel);
+            $courseModel = new CourseModel();
+            $this->assertInstanceOf('Model', $courseModel);
         }
 
         public function testAttach(){
-            $indexModel = new IndexModel();
+            $courseModel = new CourseModel();
             $indexView = new View();
-            $indexModel->attach($indexView);
-            $this->assertEquals($indexView, $indexModel->getObservers()[0]);
+            $courseModel->attach($indexView);
+            $this->assertEquals($indexView, $courseModel->getObservers()[0]);
         }
 
         public function testDetach(){
-            $indexModel = new IndexModel();
+            $courseModel = new CourseModel();
             $indexView = new View();
-            $indexModel->attach($indexView);
-            $indexModel->detach($indexView);
-            $this->assertEquals(array(), $indexModel->getObservers());
+            $courseModel->attach($indexView);
+            $courseModel->detach($indexView);
+            $this->assertEquals(array(), $courseModel->getObservers());
         }
 
         public function testNotify(){
             $data = file_get_contents("../data/courses.json");
             $records = json_decode($data,true);
-            $indexModel = new IndexModel();
+            $courseModel = new CourseModel();
             $indexView = new View();
-            $indexModel->attach($indexView);
-            $indexModel->setData($indexModel->getAll());
-            $indexModel->notify();
+            $courseModel->attach($indexView);
+            $courseModel->setData($courseModel->getAll());
+            $courseModel->notify();
             $this->assertEquals($records,$indexView->getObsData());
         }
 
         public function testGetAll(){
             $data = file_get_contents("../data/courses.json");
             $records = json_decode($data,true);
-            $indexModel = new IndexModel();
-            $this->assertEquals($indexModel->getAll(),$records);
+            $courseModel = new CourseModel();
+            $this->assertEquals($courseModel->getAll(),$records);
         }
 
         public function testGetRecord(){
@@ -53,8 +53,8 @@
                 "course_image":"software.jpg"
             }';
             $record = json_decode($data,true);
-            $indexModel = new IndexModel();
-            $this->assertEquals($indexModel->getRecord(3),$record);
+            $courseModel = new CourseModel();
+            $this->assertEquals($courseModel->getRecord(3),$record);
         }
     }
 

@@ -3,10 +3,12 @@
     abstract class Model implements Observable{
         private $observers;
         private $data;
+        protected $path;
 
         function __construct(){
             $this->observers = array();
             $this->data = array();
+            $this->path = dirname(dirname(realpath(__FILE__)));
         }
 
         abstract public function getAll():array;

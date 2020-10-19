@@ -11,10 +11,10 @@ class ControllerTest extends TestCase{
 
     public function testModelSetter(){
 
-        $indexModel = new IndexModel();
+        $courseModel = new CourseModel();
         $indexController = new IndexController();
-        $indexController->setModel($indexModel);
-        $this->assertEquals($indexModel, $indexController->getModel()); 
+        $indexController->setModel($courseModel);
+        $this->assertEquals($courseModel, $indexController->getModel()); 
     }
 
     public function testViewSetter(){

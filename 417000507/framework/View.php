@@ -16,7 +16,9 @@
         }
 
         public function display():void{
-            extract($this->vars);
+            if ($this->vars != array()) {
+                extract($this->vars);
+            }
             $this->obsData;
             require $this->tpl;
         }
@@ -26,7 +28,11 @@
         }
 
         public function update(Observable $observable):void{
-            $this->obsData = $observable->getData();
+            if (!is_array($this->obsData)) {
+                $this->obsData[] = $observable->getData();
+            } else{
+                array_push($this->obsData, $observable->getData());
+            }
         }
 
         public function getObsData():array{
