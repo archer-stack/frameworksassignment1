@@ -33,7 +33,7 @@
             $courseModel->attach($indexView);
             $courseModel->setData($courseModel->getAll());
             $courseModel->notify();
-            $this->assertEquals($records,$indexView->getObsData());
+            $this->assertEquals($records,$indexView->getObsData()[0]);
         }
 
         public function testGetAll(){
